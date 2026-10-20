@@ -34,7 +34,7 @@ One inbox. Three roles. The user does not switch apps to remember the job.
 
 ## Distribution
 
-Canonical copy lives at `roryatelier/hermes-skills` (private). Install on any agent:
+Canonical copy lives at `roryatelier/hermes-skills` (public). Install on any agent:
 
 ```
 hermes skills tap add roryatelier/hermes-skills
@@ -44,9 +44,8 @@ hermes skills install roryatelier/hermes-skills/sdlc-architect
 hermes skills install roryatelier/hermes-skills/sdlc-review-gate
 ```
 
-Requires `GH_TOKEN` with `repo` scope in the agent's environment, because the repo is
-private. Edit the local copy, then re-publish — the repo is the distribution channel,
-the host is the working copy.
+No credential is needed — the repo is public. Edit the local copy, then re-publish;
+the repo is the distribution channel, the host is the working copy.
 
 ## Board
 

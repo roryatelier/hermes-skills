@@ -4,6 +4,8 @@ Shared Hermes skills for Rory's agents. One inbox, three roles, a visible spend 
 
 ## Install (per agent)
 
+No credentials needed — this repo is public.
+
 ```bash
 hermes skills tap add roryatelier/hermes-skills
 hermes skills search sdlc --source github
