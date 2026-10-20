@@ -32,6 +32,22 @@ One inbox. Three roles. The user does not switch apps to remember the job.
 - After a pass, increment the ledger in the same turn. Date key is UTC `YYYY-MM-DD`.
 - Wednesday rule: if the week's passes exceed 16 by Wednesday, freeze new plans. Finish open cards only. Weekly cap is 20.
 
+## Distribution
+
+Canonical copy lives at `roryatelier/hermes-skills` (private). Install on any agent:
+
+```
+hermes skills tap add roryatelier/hermes-skills
+hermes skills install roryatelier/hermes-skills/agent-sdlc
+hermes skills install roryatelier/hermes-skills/sdlc-next
+hermes skills install roryatelier/hermes-skills/sdlc-architect
+hermes skills install roryatelier/hermes-skills/sdlc-review-gate
+```
+
+Requires `GH_TOKEN` with `repo` scope in the agent's environment, because the repo is
+private. Edit the local copy, then re-publish — the repo is the distribution channel,
+the host is the working copy.
+
 ## Board
 
 - **Settings root:** `$HERMES_HOME/reports/sdlc/` — resolve `HERMES_HOME` per host. Each agent keeps its own board; only the skills are shared.
