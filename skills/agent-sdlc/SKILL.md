@@ -28,7 +28,7 @@ One inbox. Three roles. The user does not switch apps to remember the job.
 ## Spend cap
 
 - 4 expensive passes per calendar day. Architect and reviewer each count as one. Clerk does not.
-- Ledger: `$HERMES_HOME/reports/sdlc/ledger.json`. Read it before an expensive pass. If `passes_used` for today is already 4, refuse the pass and say so. Do not silently spend.
+- Ledger: `$HERMES_HOME/sdlc/ledger.json`. Read it before an expensive pass. If `passes_used` for today is already 4, refuse the pass and say so. Do not silently spend.
 - After a pass, increment the ledger in the same turn. Date key is UTC `YYYY-MM-DD`.
 - Wednesday rule: if the week's passes exceed 16 by Wednesday, freeze new plans. Finish open cards only. Weekly cap is 20.
 
@@ -50,9 +50,9 @@ the host is the working copy.
 
 ## Board
 
-- **Settings root:** `$HERMES_HOME/reports/sdlc/` — resolve `HERMES_HOME` per host. Each agent keeps its own board; only the skills are shared.
-- Human board: `$HERMES_HOME/reports/sdlc/board.html`
-- Machine card: `$HERMES_HOME/reports/sdlc/board.json`
+- **State root:** `$HERMES_HOME/sdlc/` — resolve `HERMES_HOME` per host. Holds `board.json` and `ledger.json`. Each agent keeps its own board; only the skills are shared.
+- Human board: `$HERMES_HOME/reports/sdlc/board.html`. Machine state never lives under `reports/`.
+- Machine card: `$HERMES_HOME/sdlc/board.json`
 - Update both at the end of every non-trivial task. One card in `now`. Everything else is `next`, `blocked`, or `done`.
 - A task is not done until the acceptance test in the card has been run and the result is on the card.
 

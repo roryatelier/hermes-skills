@@ -9,7 +9,7 @@ Trigger: the user says "review this". This is the release gate.
 
 This is an EXPENSIVE pass. It counts against the 4-per-day cap.
 
-1. Read `$HERMES_HOME/reports/sdlc/ledger.json`. If today's `passes_used` is already 4, refuse and say so.
+1. Read `$HERMES_HOME/sdlc/ledger.json`. If today's `passes_used` is already 4, refuse and say so.
 2. Assemble the brief: the job card, the diff, and the raw test output. NOT the conversation history.
 3. Switch to the reviewer model: `/model reviewer` (openai/gpt-5.6-sol).
 4. The reviewer returns a verdict only: PASS / NEEDS-REWORK / FAIL, then a numbered list of required fixes.

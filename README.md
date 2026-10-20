@@ -30,16 +30,20 @@ defer to it — do not restate the rules in them.
 
 ## Per-agent setup
 
-The skills read a board and a ledger at `$HERMES_HOME/reports/sdlc/`.
+The skills read machine state at `$HERMES_HOME/sdlc/` and write the human-readable
+board to `$HERMES_HOME/reports/sdlc/`.
 
 Each agent keeps **its own** board and ledger. Only the skills are shared. Create the
-directory and the two files before first use:
+directories and the two state files before first use:
 
 ```bash
-mkdir -p "$HERMES_HOME/reports/sdlc"
-printf '{"updated":"","now":null,"next":[],"blocked":[],"done":[]}' > "$HERMES_HOME/reports/sdlc/board.json"
-printf '{"expensive_passes_per_day":4,"expensive_passes_per_week":20,"models":{},"days":{}}' > "$HERMES_HOME/reports/sdlc/ledger.json"
+mkdir -p "$HERMES_HOME/sdlc" "$HERMES_HOME/reports/sdlc"
+printf '{"updated":"","now":null,"next":[],"blocked":[],"done":[]}' > "$HERMES_HOME/sdlc/board.json"
+printf '{"expensive_passes_per_day":4,"expensive_passes_per_week":20,"models":{},"days":{}}' > "$HERMES_HOME/sdlc/ledger.json"
 ```
+
+Never put `board.json` or `ledger.json` under `reports/` — that directory is for
+human-facing artifacts only.
 
 ## Configure the models
 
